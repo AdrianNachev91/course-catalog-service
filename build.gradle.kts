@@ -31,6 +31,8 @@ dependencies {
 
     //logging
     implementation("io.github.microutils:kotlin-logging-jvm:3.0.5")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
 
     runtimeOnly("com.h2database:h2:2.1.214")
 //    runtimeOnly("org.postgresql:postgresql")
