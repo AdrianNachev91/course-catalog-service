@@ -14,7 +14,6 @@ import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWeb
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.ActiveProfiles
 import org.springframework.test.web.reactive.server.WebTestClient
-import org.springframework.test.web.reactive.server.expectBodyList
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("test")
@@ -87,5 +86,18 @@ class CourseControllerIntgTest {
             .returnResult().responseBody
 
         assertEquals("Build RestFul APis using SpringBoot and Kotlin1", updatedCourse!!.name)
+    }
+
+    @Test
+    fun deleteCourse() {
+
+        val course = Course(null, "Build RestFul APis using SpringBoot and Kotlin", "Development")
+        courseRepository.save(course)
+
+        webTestClient
+            .delete()
+            .uri("/v1/courses/{courseId}", course.id)
+            .exchange()
+            .expectStatus().isNoContent
     }
 }
