@@ -20,14 +20,22 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-    implementation("org.springframework.boot:spring-boot-starter-validation")
-    implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa:3.0.4")
+
+    implementation("org.springframework.boot:spring-boot-starter-validation:3.0.4")
+
+    implementation("org.springframework.boot:spring-boot-starter-web:3.1.0")
+
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.14.2")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
-    runtimeOnly("com.h2database:h2")
+
+    //logging
+    implementation("io.github.microutils:kotlin-logging-jvm:3.0.5")
+
+    runtimeOnly("com.h2database:h2:2.1.214")
 //    runtimeOnly("org.postgresql:postgresql")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test:3.1.0")
 }
 
 tasks.withType<KotlinCompile> {
