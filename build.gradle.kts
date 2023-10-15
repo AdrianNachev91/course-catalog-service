@@ -34,8 +34,8 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
     testImplementation("org.junit.jupiter:junit-jupiter:5.8.1")
 
-    runtimeOnly("com.h2database:h2:2.1.214")
-//    runtimeOnly("org.postgresql:postgresql")
+//    runtimeOnly("com.h2database:h2:2.1.214")
+    runtimeOnly("org.postgresql:postgresql")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test:3.1.0")
     testImplementation("org.springframework.boot:spring-boot-starter-webflux:3.0.4")
